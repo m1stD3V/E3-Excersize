@@ -12,7 +12,10 @@ face.setAttribute("viewBox", "0 0 200 200");
 face.setAttribute("role", "img");
 face.setAttribute("aria-label", "A neutral face");
 
-const batsImage = document.createElementNS("http://www.w3.org/2000/svg", "image");
+const batsImage = document.createElementNS(
+  "http://www.w3.org/2000/svg",
+  "image",
+);
 batsImage.setAttribute("href", batsUrl);
 batsImage.setAttribute("x", "0");
 batsImage.setAttribute("y", "0");
@@ -21,7 +24,10 @@ batsImage.setAttribute("height", "300");
 face.append(batsImage);
 // Bats sources from https://www.alvahnbeldinglibrary.org/site-assets/images/transparent-bats.png/image_view_fullscreen
 
-const mistImage = document.createElementNS("http://www.w3.org/2000/svg", "image");
+const mistImage = document.createElementNS(
+  "http://www.w3.org/2000/svg",
+  "image",
+);
 mistImage.setAttribute("href", mistUrl);
 mistImage.setAttribute("x", "0");
 mistImage.setAttribute("y", "0");
@@ -39,7 +45,6 @@ head.setAttribute("fill", "#f3cf87");
 head.setAttribute("stroke", "#302c29");
 head.setAttribute("stroke-width", "4");
 face.append(head);
-
 
 const leftEye = document.createElementNS(
   "http://www.w3.org/2000/svg",
