@@ -1,0 +1,29 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #302c29;
+  background: #f6f2ea;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  max-width: 36rem;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+#portrait svg {
+  display: block;
+  width: min(100%, 20rem);
+  margin: 2rem auto;
+  transform-origin: center;
+}
+
+button {
+  font: inherit;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+}
