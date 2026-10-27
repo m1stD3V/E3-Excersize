@@ -63,6 +63,48 @@ function buildFace(portrait: HTMLDivElement) {
   mouth.setAttribute("stroke-linecap", "round");
   face.append(mouth);
 
+  const teethCount = 5;
+  const toothWidth = 8;
+  const startX = 82;
+
+  for (let i = 0; i < teethCount; i++) {
+    const tooth = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "polygon",
+    );
+
+    const x1 = startX + i * toothWidth;
+    const x2 = x1 + toothWidth / 2;
+    const x3 = x1 + toothWidth;
+
+    tooth.setAttribute("points", `${x1},137 ${x2},145 ${x3},137`);
+    tooth.setAttribute("fill", "#fffff");
+    tooth.setAttribute("stroke", "#302c29");
+    tooth.setAttribute("stroke-width", "2");
+    face.append(tooth);
+  }
+
+  for (let i = 0; i < 100; i++) {
+    const t = i / 99;
+    const x = 60 + t * 80;
+
+    const jawY = 140 + 45 * Math.sin(t * Math.PI);
+
+    const hair = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    hair.setAttribute("x1", x.toString());
+    hair.setAttribute("y1", jawY.toString());
+
+    const angleOffset = ((i % 5) - 2) * 1.5;
+    const length = 6 + (1 % 7);
+
+    hair.setAttribute("x2", (x + angleOffset).toString());
+    hair.setAttribute("y2", (jawY + length).toString());
+    hair.setAttribute("stroke", "#302c29");
+    hair.setAttribute("stroke-width", "2");
+    hair.setAttribute("stroke-linecap", "round");
+    face.append(hair);
+  }
+
   portrait.append(face);
 
   return face;

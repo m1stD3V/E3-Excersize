@@ -8,3 +8,5 @@
 
 **C). ASSETS (Explored)**
 -- A monochrome gradient across the entire face to give a vintage almost punk rock feel
+
+** A Chosen: It looked the best, and was the funniest**
