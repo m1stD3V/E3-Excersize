@@ -1,11 +1,34 @@
+// @deno-types="./asset-url.d.ts"
+import batsUrl from "./assets/bats.png";
+import mistUrl from "./assets/mist.png";
+
 const portrait = document.querySelector<HTMLDivElement>("#portrait")!;
 const spin = document.querySelector<HTMLButtonElement>("#spin")!;
 
 // The prototype grew inline. Keep it this way until the refactoring checkpoint.
 const face = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+
 face.setAttribute("viewBox", "0 0 200 200");
 face.setAttribute("role", "img");
 face.setAttribute("aria-label", "A neutral face");
+
+const batsImage = document.createElementNS("http://www.w3.org/2000/svg", "image");
+batsImage.setAttribute("href", batsUrl);
+batsImage.setAttribute("x", "0");
+batsImage.setAttribute("y", "0");
+batsImage.setAttribute("width", "300");
+batsImage.setAttribute("height", "300");
+face.append(batsImage);
+// Bats sources from https://www.alvahnbeldinglibrary.org/site-assets/images/transparent-bats.png/image_view_fullscreen
+
+const mistImage = document.createElementNS("http://www.w3.org/2000/svg", "image");
+mistImage.setAttribute("href", mistUrl);
+mistImage.setAttribute("x", "0");
+mistImage.setAttribute("y", "0");
+mistImage.setAttribute("width", "300");
+mistImage.setAttribute("height", "300");
+face.append(mistImage);
+// mist sourced from https://freepngimg.com/png/28000-mist-transparent-image
 
 const head = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 head.setAttribute("cx", "100");
@@ -16,6 +39,7 @@ head.setAttribute("fill", "#f3cf87");
 head.setAttribute("stroke", "#302c29");
 head.setAttribute("stroke-width", "4");
 face.append(head);
+
 
 const leftEye = document.createElementNS(
   "http://www.w3.org/2000/svg",
